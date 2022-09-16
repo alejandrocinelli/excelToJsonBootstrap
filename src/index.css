@@ -1,0 +1,26 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(67, 59, 221);
+  color: #fff;
+  padding: 10px;
+  align-items: center;
+      
+}
+
+#header2{
+  background-color: rgb(67, 59, 221);
+}
+
+@media screen and (max-width: 508px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+}
+  
+
+
