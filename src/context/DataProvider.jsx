@@ -9,8 +9,7 @@ export const DataProvider = ({ children }) => {
   const [filtradoUnicoTipoTarea, setFiltradoUnicoTipoTarea] = useState([]); // idem arriba capas los puedo como bandera
   
   useEffect(() => {
-    console.log("se ejecuto el use effect");
-
+    
     setDataMuestra(data);
   }, [data]);
 
@@ -27,18 +26,27 @@ export const DataProvider = ({ children }) => {
   };
 
   const handlerTipoDeTarea = (tipo) => {
-    console.log(tipo);
-    const filtrado = data.filter((item) => item.TipoDeTarea === tipo);
+    // console.log(tipo);
+    // antes lo hice con data ... pero no me funciono
+    const filtrado = dataMuestra.filter((item) => item.TipoDeTarea === tipo);
     setDataMuestra(filtrado);
   };
 
   const handlerResponsableDiseño = (responsable) => {
     console.log(responsable);
-    const filtrado = data.filter(
-      (item) => item.ResponsableDiseño === responsable
-    );
+    const filtrado = dataMuestra.filter(
+      (item) => item.ResponsableDiseño == responsable );
+    // hace una copia de dataMuestra y le agrega el nuevo filtrado
     setDataMuestra(filtrado);
+    //setDataMuestra(filtrado);
   };
+
+  const handlerEstadoDeDiseño = (estado) => {
+    console.log(estado);
+    const filtrado = dataMuestra.filter(
+      (item) => item.EstadoDeDiseño == estado );
+    setDataMuestra(filtrado);
+  }
 
   const handlerDeleteSelection = (e) => {
     e.preventDefault();
@@ -59,6 +67,7 @@ export const DataProvider = ({ children }) => {
         setFiltradoUnicoTipoTarea,
         setFiltradoUnicoRespDise,
         handlerBusquedaGpo,
+        handlerEstadoDeDiseño
       }}
     >
       {children}

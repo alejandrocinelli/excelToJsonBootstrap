@@ -18,10 +18,6 @@ const ResponsableDiseño = () => {
     
 }
 
-else{
-    console.log("no hay datos")
-}
-
  }, [data])
 
   return (
@@ -39,6 +35,15 @@ else{
               <div className="pb-3">
               {resposableDiseño.length > 0 ? (
           resposableDiseño.map((item) => {
+
+            if(item === undefined) {
+              
+              return <button type="button" 
+              onClick={() => handlerResponsableDiseño(item)}
+              className="btn btn-primary btn-sm me-2 mb-2" 
+              key="vacio">Sin Asignar</button>
+            }
+                        
             return (
               <button
                 type="button"
@@ -54,7 +59,7 @@ else{
             );
           })
         ) : (
-          <p className="text-center">no hay datos</p>
+          <p className="text-center">No hay datos Cargados</p>
         )}
               </div>
             </div>
