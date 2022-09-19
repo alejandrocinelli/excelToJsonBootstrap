@@ -13,9 +13,7 @@ const Filtros = () => {
     setFiltradoUnicoTipoTarea,
   } = useData();
   const [tipoDeTarea, setTipoDeTarea] = useState([]);
-  const [click,setClick] = useState(
-   
-  )
+  const [click,setClick] = useState("primary")
 
   useEffect(() => {
     if (data.length > 0) {
@@ -23,9 +21,7 @@ const Filtros = () => {
       const tipos = data.map((item) => item.TipoDeTarea);
       const tiposSinRepetir = [...new Set(tipos)];
       setTipoDeTarea(tiposSinRepetir);
-    } else {
-      //console.log(" esta vacio");
-    }
+    } 
   }, [data]);
 
   return (
@@ -53,8 +49,7 @@ const Filtros = () => {
                     return (
                       <button
                         type="button"
-                        className="btn btn-primary btn-sm me-2 mb-2
-                "
+                        className={`btn btn-${click} btn-sm me-2 mb-2`}
                         key={item}
                         onClick={() => {
                           handlerTipoDeTarea(item);
