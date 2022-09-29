@@ -5,7 +5,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 
 const EstadoDiseño = () => {
 
-    const { data, handlerDeleteSelection,handlerEstadoDeDiseño } = useData();
+    const { data, handlerDeleteSelection,handlerEstadoDeDiseño,setFiltradoUnicoEstadoDiseño} = useData();
     const [estadoDiseño, setEstadoDiseño] = useState([]);
 
     useEffect(() => {
@@ -38,7 +38,7 @@ const EstadoDiseño = () => {
                 className="btn btn-primary btn-sm me-2 mb-2
                 "
                 key={item}
-                onClick={() => {handlerEstadoDeDiseño(item)
+                onClick={() => {setFiltradoUnicoEstadoDiseño(item)
                     
                 }}
               >

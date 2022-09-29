@@ -6,11 +6,8 @@ import ResponsableDiseño from "./ResponsableDiseño";
 import EstadoDiseño from "./EstadoDiseño";
 
 const Filtros = () => {
-  const {
-    handlerTipoDeTarea,
-    handlerDeleteSelection,
-    data,
-    setFiltradoUnicoTipoTarea,
+  const {data,
+    setFiltradoUnicoTipoTarea,handlerDeleteTipoTarea
   } = useData();
   const [tipoDeTarea, setTipoDeTarea] = useState([]);
   const [click,setClick] = useState("primary")
@@ -37,7 +34,7 @@ const Filtros = () => {
                     className="h-100"
                     variant="light"
                     type="submit"
-                    onClick={handlerDeleteSelection}
+                    onClick={handlerDeleteTipoTarea}
                   >
                     <AiOutlineDelete className="w-100 mb-2" />
                   </Button>
@@ -52,7 +49,7 @@ const Filtros = () => {
                         className={`btn btn-${click} btn-sm me-2 mb-2`}
                         key={item}
                         onClick={() => {
-                          handlerTipoDeTarea(item);
+                          
                           setFiltradoUnicoTipoTarea(item);
                         }}
                       >

@@ -1,5 +1,4 @@
 import { Form, Row, Col, Button, Container } from "react-bootstrap";
-import { useState } from "react";
 import useData from "../hooks/useData";
 import * as XLSX from 'xlsx'
 
@@ -12,7 +11,7 @@ const ParcelExcel = () => {
     const file = e.target.files[0]
     const data = await file.arrayBuffer()
     const workbook = XLSX.read(data)
-    console.log(workbook)
+   // console.log(workbook)
 
     const worksheet = workbook.Sheets[workbook.SheetNames[0]]
     const jsonData = XLSX.utils.sheet_to_json(worksheet)
