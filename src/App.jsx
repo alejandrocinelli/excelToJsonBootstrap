@@ -11,7 +11,6 @@ function App() {
         <Filtros/>
         <TablaContainer/>
       </DataProvider>
-      
     </div>
   );
 }

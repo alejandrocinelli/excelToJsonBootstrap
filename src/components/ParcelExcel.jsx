@@ -16,7 +16,7 @@ const ParcelExcel = () => {
     const worksheet = workbook.Sheets[workbook.SheetNames[0]]
     const jsonData = XLSX.utils.sheet_to_json(worksheet)
     console.log(jsonData)
-    setData(jsonData)
+    await setData(jsonData)
 }
 
   return (
